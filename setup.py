@@ -7,7 +7,8 @@ def get_requirement(file_path:str) -> List[str]:
     HYPEN_DOT_E = "-e ."
     requirements = []
     with open(file_path) as file_obj:
-        requirements = [req.replace("\n","") for req in file_obj.readlines()]
+        requirements = file_obj.readlines()
+        requirements = [req.replace("\n","") for req in requirements]  # Remove newline characters
         
         if HYPEN_DOT_E in requirements:
             requirements.remove(HYPEN_DOT_E)
