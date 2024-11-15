@@ -1,5 +1,5 @@
 import sys
-import logging
+from logger import logging
 
 
 def error_message_detail(error,error_detail:sys):
@@ -23,9 +23,9 @@ class CustomException(Exception):
     
     
     
-# if __name__ == "__main__":
-#     try:
-#         a=1/0
-#     except Exception as e:
-#         logging.info("Div/Zero")
-#         raise CustomException(e,sys)
+if __name__ == "__main__":
+    try:
+        a=1/0
+    except Exception as e:
+        logging.info("Div/Zero")
+        raise CustomException(e,sys)
